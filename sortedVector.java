@@ -22,7 +22,8 @@ public class sortedVector {
         uniqueWords = sortedUniqueCount(readWords); 
  
         System.out.println("Number of unique words = " + uniqueWords); 
-        System.out.println("Number of assignments = " + assignments);         System.out.println("Number of comparisons = " + comparisons); 
+        System.out.println("Number of assignments = " + assignments);         
+        System.out.println("Number of comparisons = " + comparisons); 
  
     }  
     public static int countStr(String str, Vector<String> readWords) 
@@ -31,7 +32,8 @@ public class sortedVector {
         for (int i=0; i < readWords.size(); i++) 
         { 
             if (readWords.get(i).equals(str)) 
-                count ++; // counts how many times the word appears             comparisons++; 
+                count ++; // counts how many times the word appears            
+                comparisons++; 
         } 
         return count; 
     }  
@@ -55,7 +57,9 @@ public class sortedVector {
         }  
         if (!uniqueWords.contains(readWords.get(readWords.size()-1))) //adds the last element if it is unique (*it is*) 
         { 
-            uniqueWords.add(readWords.get(readWords.size()-1));             uniqueCount.add(Collections.frequency(readWords,  readWords.get(readWords.size()-1)));             assignments++; 
+            uniqueWords.add(readWords.get(readWords.size()-1));             
+            uniqueCount.add(Collections.frequency(readWords,  readWords.get(readWords.size()-1)));             
+            assignments++; 
         }  
         return uniqueWords.size(); 
     } 
@@ -66,11 +70,16 @@ public class sortedVector {
         File file = new File(fileName); 
  
         try{ 
-            Scanner sc = new Scanner(file);             while (sc.hasNextLine()) 
+            Scanner sc = new Scanner(file);             
+            while (sc.hasNextLine()) 
             { 
-                String data = sc.nextLine().toLowerCase();                 char ch=' ';                 if (!data.equals("")) 
-                    ch = data.charAt(0); // get first character of string                 if (ch >= 'a' && ch <= 'z') 
-                    words.add(data); // adds values to words vector if character is alphabetical.             } 
+                String data = sc.nextLine().toLowerCase();                 
+                char ch=' ';                 
+                if (!data.equals("")) 
+                    ch = data.charAt(0); // get first character of string                 
+                    if (ch >= 'a' && ch <= 'z') 
+                    words.add(data); // adds values to words vector if character is alphabetical.             
+            } 
             sc.close(); 
         } 
         catch (FileNotFoundException e) 
